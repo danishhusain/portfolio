@@ -21,20 +21,19 @@ function Toolstack() {
   ];
 
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+    <Row className="justify-content-center techstack-grid pb-5">
       {tools.map((tool, index) => (
-        <Col xs={4} md={2} className="tech-icons" key={index} title={tool.name}>
-          {tool.icon}
-          <div
-            style={{
-              fontSize: "0.26em",
-              marginTop: "8px",
-              fontWeight: "600",
-              color: "#e0b0ff",
-              letterSpacing: "0.5px",
-            }}
-          >
-            {tool.name}
+        <Col
+          xs={6}
+          sm={4}
+          md={3}
+          lg={2}
+          className="tech-icons-col"
+          key={index}
+        >
+          <div className="tech-icons" title={tool.name}>
+            <div className="tech-icon-svg">{tool.icon}</div>
+            <span className="tech-name">{tool.name}</span>
           </div>
         </Col>
       ))}

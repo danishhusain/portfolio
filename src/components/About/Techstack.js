@@ -36,25 +36,24 @@ function Techstack() {
     { icon: <SiFirebase />, name: "Firebase Firestore" },
     { icon: <SiApachekafka />, name: "Apache Kafka" },
     { icon: <SiRabbitmq />, name: "RabbitMQ" },
-    { icon: <FaDatabase />, name: "SQL & RDBMS" },
+    { icon: <FaDatabase />, name: "SQL" },
     { icon: <DiGit />, name: "Git" },
   ];
 
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+    <Row className="justify-content-center techstack-grid pb-5">
       {skills.map((skill, index) => (
-        <Col xs={4} md={2} className="tech-icons" key={index} title={skill.name}>
-          {skill.icon}
-          <div
-            style={{
-              fontSize: "0.26em",
-              marginTop: "8px",
-              fontWeight: "600",
-              color: "#e0b0ff",
-              letterSpacing: "0.5px",
-            }}
-          >
-            {skill.name}
+        <Col
+          xs={6}
+          sm={4}
+          md={3}
+          lg={2}
+          className="tech-icons-col"
+          key={index}
+        >
+          <div className="tech-icons" title={skill.name}>
+            <div className="tech-icon-svg">{skill.icon}</div>
+            <span className="tech-name">{skill.name}</span>
           </div>
         </Col>
       ))}

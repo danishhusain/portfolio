@@ -9,6 +9,7 @@ const experiences = [
     role: "MERN Stack & React Native Developer",
     location: "Noida, India",
     duration: "Mar 2026 – Present",
+    current: true,
     projects: [
       {
         name: "BedaHealth — Healthcare",
@@ -33,6 +34,7 @@ const experiences = [
     role: "MERN Stack & React Native Developer",
     location: "Delhi, India",
     duration: "Apr 2025 – Jun 2025",
+    current: false,
     projects: [
       {
         name: "BoxxDocks — Logistics",
@@ -55,6 +57,7 @@ const experiences = [
     role: "MERN Stack & React Native Developer",
     location: "Noida, India",
     duration: "Jun 2023 – Apr 2025",
+    current: false,
     projects: [
       {
         name: "E-Commerce Admin (Retailer App)",
@@ -79,6 +82,7 @@ const experiences = [
     role: "React Native Developer",
     location: "Mumbai, India",
     duration: "Mar 2023 – Jun 2023",
+    current: false,
     projects: [
       {
         name: "OnlyFootball — Sports & Fantasy App",
@@ -93,88 +97,55 @@ const experiences = [
 
 function Experience() {
   return (
-    <Container fluid style={{ paddingBottom: "30px" }}>
-      <Row style={{ justifyContent: "center" }}>
+    <Container fluid className="experience-section-wrapper">
+      <Row className="justify-content-center">
         {experiences.map((exp, idx) => (
-          <Col md={11} key={idx} style={{ marginBottom: "25px" }}>
-            <Card
-              style={{
-                backgroundColor: "rgba(19, 13, 34, 0.75)",
-                borderColor: "rgba(200, 137, 230, 0.4)",
-                borderRadius: "12px",
-                boxShadow: "0 4px 15px rgba(120, 40, 180, 0.15)",
-                backdropFilter: "blur(6px)",
-                color: "#fff",
-                textAlign: "left",
-                padding: "20px",
-              }}
-            >
+          <Col md={11} lg={10} key={idx} className="experience-card-col">
+            <Card className={`experience-card ${exp.current ? "current-role-card" : ""}`}>
               <Card.Body>
-                <div className="d-flex flex-wrap justify-content-between align-items-center mb-2">
-                  <h3 style={{ color: "#c770f0", fontWeight: "600", fontSize: "1.4em", margin: 0 }}>
-                    <BsBriefcaseFill style={{ marginRight: "10px", verticalAlign: "middle" }} />
-                    {exp.role}
-                  </h3>
-                  <div style={{ color: "#bda6d6", fontSize: "0.95em", marginTop: "5px" }}>
-                    <span style={{ marginRight: "15px" }}>
-                      <MdDateRange style={{ marginRight: "4px", verticalAlign: "text-bottom" }} />
+                <div className="experience-header">
+                  <div className="experience-title-area">
+                    <h3 className="experience-role">
+                      <BsBriefcaseFill className="experience-role-icon" />
+                      {exp.role}
+                    </h3>
+                    <h4 className="experience-company">{exp.company}</h4>
+                  </div>
+                  <div className="experience-meta">
+                    <span className="experience-meta-item">
+                      <MdDateRange className="meta-icon" />
                       {exp.duration}
                     </span>
-                    <span>
-                      <MdLocationOn style={{ marginRight: "4px", verticalAlign: "text-bottom" }} />
+                    <span className="experience-meta-item">
+                      <MdLocationOn className="meta-icon" />
                       {exp.location}
                     </span>
                   </div>
                 </div>
 
-                <h4 style={{ color: "#fff", fontSize: "1.15em", marginBottom: "15px" }}>
-                  {exp.company}
-                </h4>
-
-                {exp.projects.map((proj, pIdx) => (
-                  <div
-                    key={pIdx}
-                    style={{
-                      background: "rgba(255, 255, 255, 0.03)",
-                      padding: "15px",
-                      borderRadius: "8px",
-                      marginBottom: "12px",
-                      borderLeft: "3px solid #c770f0",
-                    }}
-                  >
-                    <div className="d-flex flex-wrap justify-content-between align-items-center mb-2">
-                      <h5 style={{ color: "#e0b0ff", fontSize: "1.05em", margin: "0 0 5px 0" }}>
-                        {proj.name}
-                      </h5>
-                      <div className="d-flex flex-wrap gap-1">
-                        {proj.tech.map((t, tIdx) => (
-                          <Badge
-                            key={tIdx}
-                            bg="secondary"
-                            style={{
-                              backgroundColor: "rgba(155, 89, 182, 0.35)",
-                              color: "#e8c5ff",
-                              border: "1px solid rgba(197, 115, 230, 0.4)",
-                              fontWeight: "normal",
-                              fontSize: "0.78em",
-                              margin: "2px",
-                              padding: "4px 8px",
-                            }}
-                          >
-                            {t}
-                          </Badge>
-                        ))}
+                <div className="experience-projects-container">
+                  {exp.projects.map((proj, pIdx) => (
+                    <div key={pIdx} className="experience-project-box">
+                      <div className="experience-project-header">
+                        <h5 className="experience-project-title">{proj.name}</h5>
+                        <div className="experience-tech-tags">
+                          {proj.tech.map((t, tIdx) => (
+                            <Badge key={tIdx} className="experience-tech-badge">
+                              {t}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
+                      <ul className="experience-points-list">
+                        {proj.points.map((pt, ptIdx) => (
+                          <li key={ptIdx} className="experience-point-item">
+                            {pt}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <ul style={{ paddingLeft: "20px", marginBottom: "0", color: "#dcd6ea", fontSize: "0.95em" }}>
-                      {proj.points.map((pt, ptIdx) => (
-                        <li key={ptIdx} style={{ marginBottom: "5px" }}>
-                          {pt}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </Card.Body>
             </Card>
           </Col>
