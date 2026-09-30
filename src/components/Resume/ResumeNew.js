@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-// import pdf from "../../Assets/../Assets/Soumyajit_Behera-BIT_MESRA.pdf";
-import pdf from "../../Assets/../Assets/Danish_Razik_Resume.pdf";
+import pdf from "../../Assets/Danish_Razik_Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 
@@ -16,7 +15,9 @@ const resumeLink =
   // "https://drive.google.com/file/d/1cseXJuc4R1F2unKlLQRsVhs4egRZUWk1/view?usp=share_link";
   // "https://drive.google.com/file/d/1RBOkiJkv2MnrxrflV3g77PyNuJbE4A39/view?usp=share_link";
   // "https://drive.google.com/file/d/1Tv-GA_rHBEGJhmHDllhea8XWMgQ3qkqm/view?usp=share_link";
-  "https://drive.google.com/file/d/1ktoMVRbiq811GdXoULsyoxObhfo7q72u/view?usp=sharing"
+  // "https://drive.google.com/file/d/1ktoMVRbiq811GdXoULsyoxObhfo7q72u/view?usp=sharing"
+  // "https://drive.google.com/file/d/1I3lT8U87v0M0GqC5jY_1uV4Tz1fF7P8u/view?usp=sharing"
+  "https://drive.google.com/file/d/1hYuPtS0EKmP6qUnbTbKI2TDhkTcMcpQq/view?usp=sharing"
 
 
 function ResumeNew() {
