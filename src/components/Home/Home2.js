@@ -4,10 +4,10 @@ import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
   AiFillInstagram,
+  AiOutlineMail,
 } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaPhoneAlt } from "react-icons/fa";
 
 function Home2() {
   return (
@@ -19,37 +19,37 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
-              <br />
-              <br />I am fluent in classics like
-              <i>
-                <b className="purple"> Html , Css & Javascript. </b>
-              </i>
+              I am a passionate <b className="purple">MERN Stack</b> &{" "}
+              <b className="purple">React Native Developer</b> with over{" "}
+              <b className="purple">3+ years of experience</b> architecting and
+              shipping production-grade mobile applications and robust API-driven
+              backends. 🚀
               <br />
               <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Mobile Applications </b> and
-                also in areas related to{" "}
-                <b className="purple">
-                Artificial intelligence.
-                </b>
-              </i>
-              <br />
-              <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Javascript</b> and
+              My core technical foundation includes:
               <i>
                 <b className="purple">
                   {" "}
-                  React Native Frameworks.
+                  JavaScript (ES6+), TypeScript, React Native, React.js, Node.js, and Express.js.
                 </b>
               </i>
-              {/* &nbsp; like
+              <br />
+              <br />
+              I specialize in end-to-end product engineering across{" "}
               <i>
-                <b className="purple"> React-Native</b>
-              </i> */}
+                <b className="purple">
+                  Healthcare, E-Commerce, Cashback Commerce, Logistics, and HR Management.
+                </b>
+              </i>
+              <br />
+              <br />
+              I have hands-on experience designing scalable architectures with{" "}
+              <b className="purple">MongoDB, PostgreSQL, MySQL</b> and{" "}
+              <b className="purple">Firebase Firestore</b>, along with message
+              queueing and pub/sub pipelines using{" "}
+              <i>
+                <b className="purple">Apache Kafka & RabbitMQ</b>.
+              </i>
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -60,7 +60,7 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1>GET IN TOUCH</h1>
             <p>
               Feel free to <span className="purple">connect </span>with me
             </p>
@@ -70,29 +70,43 @@ function Home2() {
                   href="https://github.com/danishhusain"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
+                  title="GitHub"
                 >
                   <AiFillGithub />
                 </a>
               </li>
-              {/* <li className="social-icons">
-                <a
-                  href="https://twitter.com/Soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li> */}
               <li className="social-icons">
                 <a
                   href="https://www.linkedin.com/in/danishrazik2000"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
+                  title="LinkedIn"
                 >
                   <FaLinkedinIn />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="mailto:danishrazik2001@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour home-social-icons"
+                  title="Email"
+                >
+                  <AiOutlineMail />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="tel:+918934971231"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour home-social-icons"
+                  title="Phone"
+                >
+                  <FaPhoneAlt />
                 </a>
               </li>
               <li className="social-icons">
@@ -101,6 +115,7 @@ function Home2() {
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
+                  title="Instagram"
                 >
                   <AiFillInstagram />
                 </a>

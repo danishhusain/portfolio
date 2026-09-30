@@ -10,22 +10,22 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const resumeLink =
-  // "https://raw.githubusercontent.com/soumyajit4419/portfolio/master/src/Assets/Soumyajit_Behera-BIT_MESRA.pdf";
-  // old
-  // "https://drive.google.com/file/d/1cseXJuc4R1F2unKlLQRsVhs4egRZUWk1/view?usp=share_link";
-  // "https://drive.google.com/file/d/1RBOkiJkv2MnrxrflV3g77PyNuJbE4A39/view?usp=share_link";
-  // "https://drive.google.com/file/d/1Tv-GA_rHBEGJhmHDllhea8XWMgQ3qkqm/view?usp=share_link";
-  // "https://drive.google.com/file/d/1ktoMVRbiq811GdXoULsyoxObhfo7q72u/view?usp=sharing"
-  // "https://drive.google.com/file/d/1I3lT8U87v0M0GqC5jY_1uV4Tz1fF7P8u/view?usp=sharing"
-  "https://drive.google.com/file/d/1hYuPtS0EKmP6qUnbTbKI2TDhkTcMcpQq/view?usp=sharing"
-
+  "https://drive.google.com/file/d/1hYuPtS0EKmP6qUnbTbKI2TDhkTcMcpQq/view?usp=sharing";
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
+  const [numPages, setNumPages] = useState(null);
 
   useEffect(() => {
     setWidth(window.innerWidth);
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
 
   return (
     <div>
@@ -44,10 +44,17 @@ function ResumeNew() {
         </Row>
 
         <Row className="resume">
-          <Document file={pdf} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+          <Document
+            file={pdf}
+            onLoadSuccess={onDocumentLoadSuccess}
+            className="d-flex flex-column align-items-center"
+          >
+            {Array.from(new Array(numPages || 1), (el, index) => (
+              <div key={`page_${index + 1}`} style={{ marginBottom: "25px" }}>
+                <Page pageNumber={index + 1} scale={width > 786 ? 1.7 : 0.6} />
+              </div>
+            ))}
           </Document>
-
         </Row>
 
         <Row style={{ justifyContent: "center", position: "relative" }}>
