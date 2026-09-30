@@ -2,117 +2,109 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/netflix.jpg";
-import suicide from "../../Assets/Projects/suicide.png";
-import emotion from "../../Assets/Projects/emotion.png";
-// import editor from "../../Assets/Projects/codeEditor.png";
-import editor from "../../Assets/Projects/Quizller.jpg";
-// import chatify from "../../Assets/Projects/chatify.png";
-import chatify from "../../Assets/Projects/clothingApp.jpg";
-import bitsOfCode from "../../Assets/Projects/musicAPP.jpg";
-import NanoOmni from "../../Assets/Projects/NanoOmni.jpeg";
-import onlyfootball from "../../Assets/Projects/onlyfootball.jpg";
-// import bitsOfCode from "../../Assets/Projects/blog.png";
+
+// Project images
+import bedaHealthImg from "../../Assets/Projects/chatify.png";
+import oneClickImg from "../../Assets/Projects/Quizller.jpg";
+import theFounderImg from "../../Assets/Projects/codeEditor.png";
+import ecommerceImg from "../../Assets/Projects/NanoOmni.jpeg";
+import boxxDocksImg from "../../Assets/Projects/blog.png";
+import goHrGoImg from "../../Assets/Projects/leaf.png";
+import onlyfootballImg from "../../Assets/Projects/onlyfootball.jpg";
+import clothingAppImg from "../../Assets/Projects/clothingApp.jpg";
 
 function Projects() {
+  const projectList = [
+    {
+      title: "BedaHealth",
+      imgPath: bedaHealthImg,
+      tags: ["Healthcare", "React Native", "Expo", "Push Notifications"],
+      description:
+        "Comprehensive healthcare mobile platform for doctors and patients featuring OTP authentication, role-based onboarding, appointment booking, OPD management, and automated push notifications.",
+      ghLink: "https://github.com/danishhusain",
+    },
+    {
+      title: "OneClick",
+      imgPath: oneClickImg,
+      tags: ["Cashback & Commerce", "React Native", "Redux Toolkit", "REST APIs"],
+      description:
+        "GCC-focused cashback and affiliate commerce mobile application with high-performance product discovery, advanced filtering, wishlist, cart, rewards, and real-time cashback tracking.",
+      ghLink: "https://github.com/danishhusain",
+    },
+    {
+      title: "The Founder — Employee Management API",
+      imgPath: theFounderImg,
+      tags: ["Node.js", "Express.js", "MongoDB", "RBAC", "REST APIs"],
+      description:
+        "Robust enterprise backend system with REST APIs for company, branch, employee, and attendance lifecycle management. Implemented complete CRUD modules and strict Role-Based Access Control (RBAC).",
+      ghLink: "https://github.com/danishhusain",
+    },
+    {
+      title: "E-Commerce Retailer & Customer Platform",
+      imgPath: ecommerceImg,
+      tags: ["Retail", "React Native", "Redux Toolkit", "Play Store"],
+      description:
+        "Production e-commerce mobile suite deployed to Google Play Store. Features retailer-side admin portal with order calendars and customer-side app supporting order states: Pending, Delivered, Return, and Cancelled.",
+      ghLink: "https://github.com/danishhusain",
+    },
+    {
+      title: "BoxxDocks",
+      imgPath: boxxDocksImg,
+      tags: ["Logistics", "React Native", "Barcode Scanning", "Packet Tracking"],
+      description:
+        "Enterprise logistics packet management system with scan-based status updates, barcode verification, and real-time package movement tracking across logistics hubs.",
+      ghLink: "https://github.com/danishhusain",
+    },
+    {
+      title: "GoHRGo",
+      imgPath: goHrGoImg,
+      tags: ["HR Management", "React Native", "Attendance", "Workforce"],
+      description:
+        "Workforce management mobile app streamlining employee management, daily biometric/location attendance logging, leave tracking, and workforce operations.",
+      ghLink: "https://github.com/danishhusain",
+    },
+    {
+      title: "OnlyFootball",
+      imgPath: onlyfootballImg,
+      tags: ["Sports & Fantasy", "React Native", "Gifted Chat", "UI/UX"],
+      description:
+        "Fantasy sports mobile app built with an animated splash screen, match contest flows, and dynamic real-time in-app chat interface using react-native-gifted-chat.",
+      ghLink: "https://github.com/danishhusain",
+    },
+    {
+      title: "ClothingApp",
+      imgPath: clothingAppImg,
+      tags: ["E-Commerce", "React Native", "Firebase Firestore", "Context API"],
+      description:
+        "Fashion e-commerce application with real-time Firebase Firestore catalog sync, customer order tracking, cart management, and seamless category browsing.",
+      ghLink: "https://github.com/danishhusain/clothingApp",
+    },
+  ];
+
   return (
     <Container fluid className="project-section">
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          My Recent <strong className="purple">Works & Projects</strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          Here are key production applications and projects I have engineered.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={chatify}
-              isBlog={false}
-              title="ClothingApp"
-              description="This is the ClothingApp to sell clothes online and this is build with React-Native, Context-API and Firebase. Have features which allows user to track own order."
-              ghLink="https://github.com/danishhusain/clothingApp"
-            // demoLink="https://chatify-49.web.app/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={onlyfootball}
-              isBlog={false}
-              title="OnlyFootball"
-              description="OnlyFootbal is a fantasy sports app where you can create your fantasy team based on real-life matches. Join contests and win daily cash prizes.."
-              ghLink="https://github.com/danishhusain/clothingApp"
-            // demoLink="https://chatify-49.web.app/"`
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={NanoOmni}
-              isBlog={false}
-              title="NanoOmni"
-              description="NanoOmni is the perfect tool for sweetHouse owners, streamlining retail operations with features to simplify day-to-day tasks and boost business success."
-              ghLink="https://github.com/danishhusain/MusicApp"
-            // demoLink="https://blogs.soumya-jit.tech/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bitsOfCode}
-              isBlog={false}
-              title="Music Player"
-              description="My personal MusicPlayer build with React-Native and JavaSCript. for Authentication I use React-Native Firebase service. Supports dark mode and easy to use."
-              ghLink="https://github.com/danishhusain/MusicApp"
-            // demoLink="https://blogs.soumya-jit.tech/"
-            />
-          </Col>
-
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={leaf}
-              isBlog={false}
-              title="Netflix"
-              description=" This is Netflix Clone .In this i have used TMDB rest-API for data .You can use to watching movie, web series and documentary.I developed this app by using react-native and context API"
-              ghLink="https://github.com/danishhusain/Netflix"
-              // demoLink="https://plant49-ai.herokuapp.com/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={editor}
-              isBlog={false}
-              title="Quizller"
-              description="This is QuizApp build with React-Native and JavaScript. you can improve your knowledge by playing this App. I use fetch request to get the data.And This is very simple app."
-              ghLink="https://github.com/danishhusain/QuizApp"
-            // demoLink="https://editor.soumya-jit.tech/"
-            />
-          </Col>
-
-          {/* <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={suicide}
-              isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-            // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
-            />
-          </Col> */}
-
-          {/* <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-            // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
-            />
-          </Col> */}
+          {projectList.map((project, idx) => (
+            <Col md={4} className="project-card" key={idx}>
+              <ProjectCard
+                imgPath={project.imgPath}
+                isBlog={false}
+                title={project.title}
+                tags={project.tags}
+                description={project.description}
+                ghLink={project.ghLink}
+                demoLink={project.demoLink}
+              />
+            </Col>
+          ))}
         </Row>
       </Container>
     </Container>
